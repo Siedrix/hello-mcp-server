@@ -45,3 +45,5 @@ export const price = createTask(
     }
   }
 )
+
+price.setDescription('Get the current stock price for a given ticker symbol')

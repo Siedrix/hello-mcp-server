@@ -73,10 +73,25 @@ The inspector provides a web interface to test your server's tools and see their
 
 To add new tasks:
 
-1. Create task files in the `forge task:create TASK_MODULE:TASK_NAME` directory
-2. Register them in `forge.json` 
-3. Add them as tools in `src/index.ts`
+1. Create a new task using the Forge CLI:
+   ```bash
+   forge task:create MODULE:TASK_NAME
+   ```
+   This will generate a task template file in `src/tasks/MODULE/TASK_NAME.ts`.
+
+2. Implement your task in the generated file using the Forge Task API.
+
+3. Register the task in the runner (src/runner.ts):
+   ```typescript
+   import { yourTask } from './tasks/module/your-task';
+   
+   // Add your task to the runner
+   runner.load('your_task_name', yourTask);
+   ```
+
 4. Build the project with `pnpm run build`
+
+The server will automatically register all tasks from the runner as MCP tools without needing to manually add them to the `src/index.ts` file.
 
 ## Additional Resources
 
