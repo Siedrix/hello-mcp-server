@@ -6,6 +6,7 @@ This is a Model Context Protocol (MCP) server implementation that enables AI ass
 
 - Node.js (v18 or higher)
 - pnpm package manager
+- force CLI, install with `pnpm i -g @forgehive/forge-cli`
 
 ## Installation
 
@@ -33,7 +34,7 @@ You can run individual tasks directly using the Forge runner:
 
 ```bash
 # Run the stock price task with a ticker parameter
-npx @forgehive/runner task:run stock:price --ticker AAPL
+forge task:run stock:price --ticker AAPL
 ```
 
 ## Adding to Claude Desktop
@@ -43,8 +44,9 @@ To use the server with Claude Desktop:
 1. Build the project with `pnpm run build`
 2. Modify the Claude Desktop configuration file:
 
-```bash
-# Location: ~/Library/Application Support/Claude/claude_desktop_config.json
+With `nano: ~/Library/Application Support/Claude/claude_desktop_config.json`
+
+```json
 {
     "mcpServers": {
         "hello-mcp-server": {
