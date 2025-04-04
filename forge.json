@@ -1,0 +1,23 @@
+{
+  "project": {
+    "name": "ChangeMePls"
+  },
+  "paths": {
+    "logs": "logs/",
+    "tasks": "src/tasks/",
+    "runners": "src/runners/",
+    "fixtures": "src/tests/fixtures",
+    "tests": "src/tests/"
+  },
+  "infra": {
+    "region": "us-west-2",
+    "bucket": ""
+  },
+  "tasks": {
+    "stock:price": {
+      "path": "src/tasks/stock/price.ts",
+      "handler": "price"
+    }
+  },
+  "runners": {}
+}
