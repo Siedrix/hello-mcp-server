@@ -17,6 +17,10 @@
     "stock:price": {
       "path": "src/tasks/stock/price.ts",
       "handler": "price"
+    },
+    "stock:portafolio": {
+      "path": "src/tasks/stock/portafolio.ts",
+      "handler": "portafolio"
     }
   },
   "runners": {}
